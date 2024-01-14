@@ -92,6 +92,8 @@
         <div id="question-container"></div>
         <input type="text" id="answer-input">
         <button onclick="checkAnswer()" id="submit-answer-button">Submit Answer</button>
+        <button class="upgrade-button" onclick="earnMoney()">Earn $1</button>
+
 
         <!-- Computer image container -->
        <div id="computer-container">
@@ -139,6 +141,11 @@
       
         
     ];
+
+    function earnMoney() {
+            money += 1;
+            updateMoneyDisplay();
+        }    
 
     function updateMoneyDisplay() {
         document.getElementById('money-display').textContent = `$${money}`;
