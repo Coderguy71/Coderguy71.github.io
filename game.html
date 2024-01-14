@@ -189,6 +189,34 @@
     // Initial update
     updateMoneyDisplay();
 </script>
+    <script>
+    // Your existing JavaScript code
+
+    let computerLevel = 1;
+    let computerUpgradeCost = 50;
+
+    function upgradeComputer() {
+        if (money >= computerUpgradeCost) {
+            money -= computerUpgradeCost;
+
+            // Upgrade computer and change image
+            computerLevel++;
+            document.getElementById('computer-image').src = `https://pngimg.com/d/computer_pc_PNG102107.png' + computerLevel + '.png`;
+
+            // Increase computer upgrade cost
+            computerUpgradeCost = Math.pow(2, computerLevel) * 50;
+
+            updateMoneyDisplay();
+            updateComputerUpgradeCost();
+        } else {
+            alert('Not enough money to upgrade the computer!');
+        }
+    }
+
+    function updateComputerUpgradeCost() {
+        document.getElementById('computer-upgrade-cost').textContent = `Next Computer Upgrade Cost: $${computerUpgradeCost}`;
+    }
+</script>
 
     </script>
 </body>
