@@ -74,66 +74,14 @@
         <div id="money-display">$0</div>
         <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
         <div id="next-button-cost">Next Upgrade Cost: $10</div>
-        <button class="upgrade-button" onclick="askRandomQuestion()">Ask Random Question</button>
+        <button class="upgrade-button" onclick="askRandomQuestion()" id="ask-question-button">Ask Random Question</button>
         <div id="question-container"></div>
-        <input type="text" id="answer-input" style="display: none;">
-        <button onclick="checkAnswer()" style="display: none;">Submit Answer</button>
+        <input type="text" id="answer-input">
+        <button onclick="checkAnswer()" id="submit-answer-button">Submit Answer</button>
     </div>
 
     <script>
-        let money = 0;
-        let moneyPerClick = 1;
-        let moneyGeneratorLevel = 1;
-        let upgradeCost = 10;
-        let nextButtonCost = 10; // Initial cost for the next button
-        let currentQuestion; // Variable to store the current question
-
-         const questions = [
-        {
-            questionText: "What is the capital of France?",
-            correctAnswer: "Paris"
-        },
-        // ... (your original questions)
-
-        // Additional 50 questions
-        {
-            questionText: "Although the keyboard shortcut for copying information is Ctrl + C, what letter is used to paste information when clicked synchronously with Ctrl?",
-            correctAnswer: "V"
-        },
-        {
-            questionText: "What startup, acquired by Facebook for $1 billion in 2012, became the fourth most downloaded app in the 2010s and is known for the posting of pictures?",
-            correctAnswer: "Instagram"
-        },
-        {
-            questionText: "What is the programming language developed by James Gosling at Sun Microsystems and named after the type of coffee from Indonesia?",
-            correctAnswer: "Java"
-        },
-        // ... (add the remaining questions)
-        {
-            questionText: "What company first introduced their Chromebook hardware in 2011? The product's low price point proved popular with teachers as a 2018 estimate indicated that over 60% of classroom mobile devices in the U.S. were Chromebooks.",
-            correctAnswer: "Google"
-        },
-        {
-            questionText: "Often pronounced “gooey”, GUI is short for what well-known three-word tech term?",
-            correctAnswer: "Graphical User Interface"
-        },
-        // ... (add the remaining questions)
-    ];
-
-        function updateMoneyDisplay() {
-            document.getElementById('money-display').textContent = `$${money}`;
-        }
-
-        function generateMoney() {
-            money += moneyPerClick;
-            updateMoneyDisplay();
-        }
-
-        function bonusForAnswer() {
-            // Add bonus money for answering questions
-            money += 5; // Adjust the bonus amount as needed
-            updateMoneyDisplay();
-        }
+        // ... (your existing script content)
 
         function askRandomQuestion() {
             const randomIndex = Math.floor(Math.random() * questions.length);
@@ -144,8 +92,8 @@
             questionContainer.textContent = currentQuestion.questionText;
 
             // Show answer input and submit button
-            document.getElementById('answer-input').style.display = 'block';
-            document.getElementById('submit-answer-button').style.display = 'block';
+            document.getElementById('answer-input').style.display = 'inline-block';
+            document.getElementById('submit-answer-button').style.display = 'inline-block';
         }
 
         function checkAnswer() {
@@ -166,30 +114,7 @@
             }
         }
 
-        function upgradeGenerator() {
-            if (money >= upgradeCost) {
-                money -= upgradeCost;
-                moneyPerClick *= 2; // Upgrade money per click
-                moneyGeneratorLevel++;
-                upgradeCost = Math.pow(2, moneyGeneratorLevel) * 10; // Increase upgrade cost
-                updateMoneyDisplay();
-
-                // Increase the cost for the next button
-                nextButtonCost += 10; // Adjust the cost increase as needed
-                updateNextButtonCost();
-            } else {
-                alert('Not enough money to upgrade!');
-            }
-        }
-
-        function updateNextButtonCost() {
-            document.getElementById('next-button-cost').textContent = `Next Upgrade Cost: $${nextButtonCost}`;
-        }
-
-        setInterval(generateMoney, 5000); // Generate money every 5 seconds
-
-        // Initial update
-        updateMoneyDisplay();
+        // ... (your existing script content)
     </script>
 </body>
 
