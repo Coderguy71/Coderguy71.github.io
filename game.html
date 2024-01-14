@@ -158,7 +158,7 @@
             money -= upgradeCost;
             moneyPerClick *= 2; // Upgrade money per click
             moneyGeneratorLevel++;
-            upgradeCost = Math.pow(2, moneyGeneratorLevel) * 10; // Increase upgrade cost
+            upgradeCost =  moneyGeneratorLevel * 10; // Increase upgrade cost
             updateMoneyDisplay();
 
             // Increase the cost for the next button
