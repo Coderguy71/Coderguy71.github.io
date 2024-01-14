@@ -88,10 +88,37 @@
         let nextButtonCost = 10; // Initial cost for the next button
         let currentQuestion; // Variable to store the current question
 
-        const questions = [
-            // ... (your list of questions)
-            // Each question should be an object with 'questionText' and 'correctAnswer' properties
-        ];
+         const questions = [
+        {
+            questionText: "What is the capital of France?",
+            correctAnswer: "Paris"
+        },
+        // ... (your original questions)
+
+        // Additional 50 questions
+        {
+            questionText: "Although the keyboard shortcut for copying information is Ctrl + C, what letter is used to paste information when clicked synchronously with Ctrl?",
+            correctAnswer: "V"
+        },
+        {
+            questionText: "What startup, acquired by Facebook for $1 billion in 2012, became the fourth most downloaded app in the 2010s and is known for the posting of pictures?",
+            correctAnswer: "Instagram"
+        },
+        {
+            questionText: "What is the programming language developed by James Gosling at Sun Microsystems and named after the type of coffee from Indonesia?",
+            correctAnswer: "Java"
+        },
+        // ... (add the remaining questions)
+        {
+            questionText: "What company first introduced their Chromebook hardware in 2011? The product's low price point proved popular with teachers as a 2018 estimate indicated that over 60% of classroom mobile devices in the U.S. were Chromebooks.",
+            correctAnswer: "Google"
+        },
+        {
+            questionText: "Often pronounced “gooey”, GUI is short for what well-known three-word tech term?",
+            correctAnswer: "Graphical User Interface"
+        },
+        // ... (add the remaining questions)
+    ];
 
         function updateMoneyDisplay() {
             document.getElementById('money-display').textContent = `$${money}`;
