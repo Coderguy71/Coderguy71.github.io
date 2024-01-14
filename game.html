@@ -81,102 +81,104 @@
     </div>
 
     <script>
-        let money = 0;
-        let moneyPerClick = 1;
-        let moneyGeneratorLevel = 1;
-        let upgradeCost = 10;
-        let nextButtonCost = 10; // Initial cost for the next button
-        let currentQuestion; // Variable to store the current question
+    let money = 0;
+    let moneyPerClick = 1;
+    let moneyGeneratorLevel = 1;
+    let upgradeCost = 10;
+    let nextButtonCost = 10; // Initial cost for the next button
+    let currentQuestion; // Variable to store the current question
 
-        const questions = [
-            {
-                questionText: "What is the capital of France?",
-                correctAnswer: "Paris"
-            },
-            // ... (add your original questions)
+    const questions = [
+        {
+            questionText: "What is the capital of France?",
+            correctAnswer: "Paris"
+        },
+        // ... (add your original questions)
 
-            // Additional 50 questions
-            {
-                questionText: "Although the keyboard shortcut for copying information is Ctrl + C, what letter is used to paste information when clicked synchronously with Ctrl?",
-                correctAnswer: "V"
-            },
-            {
-                questionText: "What startup, acquired by Facebook for $1 billion in 2012, became the fourth most downloaded app in the 2010s and is known for the posting of pictures?",
-                correctAnswer: "Instagram"
-            },
-            // ... (add the remaining questions)
-        ];
+        // Additional 50 questions
+        {
+            questionText: "Although the keyboard shortcut for copying information is Ctrl + C, what letter is used to paste information when clicked synchronously with Ctrl?",
+            correctAnswer: "V"
+        },
+        {
+            questionText: "What startup, acquired by Facebook for $1 billion in 2012, became the fourth most downloaded app in the 2010s and is known for the posting of pictures?",
+            correctAnswer: "Instagram"
+        },
+        // ... (add the remaining questions)
+    ];
 
-        function updateMoneyDisplay() {
-            document.getElementById('money-display').textContent = `$${money}`;
-        }
+    function updateMoneyDisplay() {
+        document.getElementById('money-display').textContent = `$${money}`;
+    }
 
-        function generateMoney() {
-            money += moneyPerClick;
-            updateMoneyDisplay();
-        }
-
-        function bonusForAnswer() {
-            // Add bonus money for answering questions
-            money += 5; // Adjust the bonus amount as needed
-            updateMoneyDisplay();
-        }
-
-        function askRandomQuestion() {
-            const randomIndex = Math.floor(Math.random() * questions.length);
-            currentQuestion = questions[randomIndex];
-
-            // Display question on the page
-            const questionContainer = document.getElementById('question-container');
-            questionContainer.textContent = currentQuestion.questionText;
-
-            // Show answer input and submit button
-            document.getElementById('answer-input').style.display = 'inline-block';
-            document.getElementById('submit-answer-button').style.display = 'inline-block';
-        }
-
-        function checkAnswer() {
-            const userAnswer = document.getElementById('answer-input').value;
-
-            // Reset question container, answer input, and submit button
-            document.getElementById('question-container').textContent = '';
-            document.getElementById('answer-input').value = '';
-            document.getElementById('answer-input').style.display = 'none';
-            document.getElementById('submit-answer-button').style.display = 'none';
-
-            if (userAnswer.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
-                // Correct answer, give a bonus
-                bonusForAnswer();
-                alert('Correct! You earned a bonus.');
-            } else {
-                alert('Incorrect. Try again for the bonus next time.');
-            }
-        }
-
-        function upgradeGenerator() {
-            if (money >= upgradeCost) {
-                money -= upgradeCost;
-                moneyPerClick *= 2; // Upgrade money per click
-                moneyGeneratorLevel++;
-                upgradeCost = Math.pow(2, moneyGeneratorLevel) * 10; // Increase upgrade cost
-                updateMoneyDisplay();
-
-                // Increase the cost for the next button
-                nextButtonCost += 10; // Adjust the cost increase as needed
-                updateNextButtonCost();
-            } else {
-                alert('Not enough money to upgrade!');
-            }
-        }
-
-        function updateNextButtonCost() {
-            document.getElementById('next-button-cost').textContent = `Next Upgrade Cost: $${nextButtonCost}`;
-        }
-
-        setInterval(generateMoney, 5000); // Generate money every 5 seconds
-
-        // Initial update
+    function generateMoney() {
+        money += moneyPerClick;
         updateMoneyDisplay();
+    }
+
+    function bonusForAnswer() {
+        // Add bonus money for answering questions
+        money += 5; // Adjust the bonus amount as needed
+        updateMoneyDisplay();
+    }
+
+    function askRandomQuestion() {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        currentQuestion = questions[randomIndex];
+
+        // Display question on the page
+        const questionContainer = document.getElementById('question-container');
+        questionContainer.textContent = currentQuestion.questionText;
+
+        // Show answer input and submit button
+        document.getElementById('answer-input').style.display = 'inline-block';
+        document.getElementById('submit-answer-button').style.display = 'inline-block';
+    }
+
+    function checkAnswer() {
+        const userAnswer = document.getElementById('answer-input').value;
+
+        // Reset question container, answer input, and submit button
+        document.getElementById('question-container').textContent = '';
+        document.getElementById('answer-input').value = '';
+        document.getElementById('answer-input').style.display = 'none';
+        document.getElementById('submit-answer-button').style.display = 'none';
+
+        if (userAnswer.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
+            // Correct answer, give a bonus
+            bonusForAnswer();
+            alert('Correct! You earned a bonus.');
+        } else {
+            alert('Incorrect. Try again for the bonus next time.');
+        }
+    }
+
+    function upgradeGenerator() {
+        if (money >= upgradeCost) {
+            money -= upgradeCost;
+            moneyPerClick *= 2; // Upgrade money per click
+            moneyGeneratorLevel++;
+            upgradeCost = Math.pow(2, moneyGeneratorLevel) * 10; // Increase upgrade cost
+            updateMoneyDisplay();
+
+            // Increase the cost for the next button
+            nextButtonCost += 10; // Adjust the cost increase as needed
+            updateNextButtonCost();
+        } else {
+            alert('Not enough money to upgrade!');
+        }
+    }
+
+    function updateNextButtonCost() {
+        document.getElementById('next-button-cost').textContent = `Next Upgrade Cost: $${nextButtonCost}`;
+    }
+
+    setInterval(generateMoney, 5000); // Generate money every 5 seconds
+
+    // Initial update
+    updateMoneyDisplay();
+</script>
+
     </script>
 </body>
 
