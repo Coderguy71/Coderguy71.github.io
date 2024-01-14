@@ -56,6 +56,11 @@
             border-color: #4CAF50;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
+
+        #next-button-cost {
+            font-size: 16px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -68,6 +73,8 @@
     <div id="game-container">
         <div id="money-display">$0</div>
         <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
+        <div id="next-button-cost">Next Upgrade Cost: $10</div>
+        <button class="upgrade-button" onclick="askRandomQuestion()">Ask Random Question</button>
     </div>
 
     <script>
@@ -75,6 +82,12 @@
         let moneyPerClick = 1;
         let moneyGeneratorLevel = 1;
         let upgradeCost = 10;
+        let nextButtonCost = 10; // Initial cost for the next button
+
+        const questions = [
+            // ... (your list of questions)
+            // Each question should be an object with 'questionText' and 'correctAnswer' properties
+        ];
 
         function updateMoneyDisplay() {
             document.getElementById('money-display').textContent = `$${money}`;
@@ -85,6 +98,27 @@
             updateMoneyDisplay();
         }
 
+        function bonusForAnswer() {
+            // Add bonus money for answering questions
+            money += 5; // Adjust the bonus amount as needed
+            updateMoneyDisplay();
+        }
+
+        function askRandomQuestion() {
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            const currentQuestion = questions[randomIndex];
+
+            const userAnswer = prompt(currentQuestion.questionText);
+
+            if (userAnswer && userAnswer.toLowerCase() === currentQuestion.correctAnswer.toLowerCase()) {
+                // Correct answer, give a bonus
+                bonusForAnswer();
+                alert('Correct! You earned a bonus.');
+            } else {
+                alert('Incorrect. Try again for the bonus next time.');
+            }
+        }
+
         function upgradeGenerator() {
             if (money >= upgradeCost) {
                 money -= upgradeCost;
@@ -92,9 +126,17 @@
                 moneyGeneratorLevel++;
                 upgradeCost = Math.pow(2, moneyGeneratorLevel) * 10; // Increase upgrade cost
                 updateMoneyDisplay();
+
+                // Increase the cost for the next button
+                nextButtonCost += 10; // Adjust the cost increase as needed
+                updateNextButtonCost();
             } else {
                 alert('Not enough money to upgrade!');
             }
+        }
+
+        function updateNextButtonCost() {
+            document.getElementById('next-button-cost').textContent = `Next Upgrade Cost: $${nextButtonCost}`;
         }
 
         setInterval(generateMoney, 5000); // Generate money every 5 seconds
@@ -105,4 +147,3 @@
 </body>
 
 </html>
-
