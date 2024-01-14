@@ -118,7 +118,7 @@
 
     function bonusForAnswer() {
         // Add bonus money for answering questions
-        money += 5; // Adjust the bonus amount as needed
+        money += moneyGaneratorLevel * 10; // Adjust the bonus amount as needed
         updateMoneyDisplay();
     }
 
@@ -158,11 +158,11 @@
             money -= upgradeCost;
             moneyPerClick *= 2; // Upgrade money per click
             moneyGeneratorLevel++;
-            upgradeCost =  moneyGeneratorLevel * 10; // Increase upgrade cost
+        upgradeCost = Math.pow(2, moneyGeneratorLevel) * 10; // Increase upgrade cost
             updateMoneyDisplay();
 
             // Increase the cost for the next button
-            nextButtonCost += 10; // Adjust the cost increase as needed
+            nextButtonCost = upgradeCost; // Adjust the cost increase as needed
             updateNextButtonCost();
         } else {
             alert('Not enough money to upgrade!');
