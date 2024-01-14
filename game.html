@@ -201,7 +201,7 @@
 
             // Upgrade computer and change image
             computerLevel++;
-            document.getElementById('https://i.pinimg.com/736x/72/c9/9f/72c99f88c1ef0ace731e43efb98f9752.jpg').src = `https://pngimg.com/d/computer_pc_PNG102107.png' + computerLevel + '.png`;
+            document.getElementById('computer-image').src = `https://i.pinimg.com/736x/72/c9/9f/72c99f88c1ef0ace731e43efb98f9752.jpg/computer${computerLevel}.png`;
 
             // Increase computer upgrade cost
             computerUpgradeCost = Math.pow(2, computerLevel) * 50;
