@@ -69,7 +69,22 @@
         <h1>CyberEmpire Money Simulator</h1>
         <p>Generate money and upgrade your money generator!</p>
     </header>
+ <div id="game-container">
+        <div id="money-display">$0</div>
+        <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
+        <div id="next-button-cost">Next Upgrade Cost: $10</div>
+        <button class="upgrade-button" onclick="askRandomQuestion()" id="ask-question-button">Ask Random Question</button>
+        <div id="question-container"></div>
+        <input type="text" id="answer-input">
+        <button onclick="checkAnswer()" id="submit-answer-button">Submit Answer</button>
 
+        <!-- Computer image container -->
+        <div id="computer-container">
+            <img id="computer-image" src="https://pngimg.com/d/computer_pc_PNG102107.png" alt="Computer">
+            <div id="computer-upgrade-cost">Next Computer Upgrade Cost: $50</div>
+            <button class="upgrade-button" onclick="upgradeComputer()">Upgrade Computer</button>
+        </div>
+    </div>
     <div id="game-container">
         <div id="money-display">$0</div>
         <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
