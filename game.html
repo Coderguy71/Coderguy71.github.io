@@ -61,67 +61,14 @@
             font-size: 16px;
             margin-top: 10px;
         }
-             background-color: #000;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            font-size: 36px;
-            margin-top: 50px;
-        }
-
-        p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        #game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 70vh;
-            gap: 20px;
-        }
-
-        #money-display {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .upgrade-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: 2px solid #45a049;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .upgrade-button:hover {
-            background-color: #45a049;
-            color: #000;
-            border-color: #4CAF50;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
-
-        #next-button-cost {
-            font-size: 16px;
-            margin-top: 10px;
-        }
 
         #computer-container {
             margin-top: 20px;
         }
 
         #computer-image {
-            width: 100px;  /* Set the desired width */
-            height: auto;  /* Maintain the aspect ratio */
+            width: 100px;
+            height: auto;
         }
 
         #computer-upgrade-cost {
@@ -136,7 +83,8 @@
         <h1>CyberEmpire Money Simulator</h1>
         <p>Generate money and upgrade your money generator!</p>
     </header>
- <div id="game-container">
+
+    <div id="game-container">
         <div id="money-display">$0</div>
         <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
         <div id="next-button-cost">Next Upgrade Cost: $10</div>
@@ -151,15 +99,6 @@
             <div id="computer-upgrade-cost">Next Computer Upgrade Cost: $50</div>
             <button class="upgrade-button" onclick="upgradeComputer()">Upgrade Computer</button>
         </div>
-    </div>
-    <div id="game-container">
-        <div id="money-display">$0</div>
-        <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
-        <div id="next-button-cost">Next Upgrade Cost: $10</div>
-        <button class="upgrade-button" onclick="askRandomQuestion()" id="ask-question-button">Ask Random Question</button>
-        <div id="question-container"></div>
-        <input type="text" id="answer-input">
-        <button onclick="checkAnswer()" id="submit-answer-button">Submit Answer</button>
     </div>
 
     <script>
