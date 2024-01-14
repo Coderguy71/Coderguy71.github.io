@@ -96,9 +96,8 @@
 
 
         <!-- Computer image container -->
-       <div id="computer-container">
+      <div id="computer-container">
     <img id="computer-image" src="https://pngimg.com/d/computer_pc_PNG102107.png" alt="Computer">
-    <img id="second-computer-image" src="https://cdn.pixabay.com/photo/2016/05/27/05/39/computer-1419134_1280.png" alt="Second Computer" style="display: none;">
     <div id="computer-upgrade-cost">Next Computer Upgrade Cost: $50</div>
     <button class="upgrade-button" onclick="upgradeComputer()">Upgrade Computer</button>
     </div>
@@ -221,31 +220,41 @@
     <script>
     // Your existing JavaScript code
 
-    let computerLevel = 1;
-    let computerUpgradeCost = 50;
+    let computerImages = [
+    "https://pngimg.com/d/computer_pc_PNG102107.png",
+    "https://cdn.pixabay.com/photo/2016/05/27/05/39/computer-1419134_1280.png",  
+    // Add more image URLs as needed
+];
+let currentImageIndex = 0;
+let computerUpgradeCost = 50;  // Initial computer upgrade cost
 
-    function upgradeComputer() {
-        if (money >= computerUpgradeCost) {
-            money -= computerUpgradeCost;
+function upgradeComputer() {
+    if (money >= computerUpgradeCost) {
+        money -= computerUpgradeCost;
 
-            // Upgrade computer and change image
-            computerLevel++;
-            document.getElementById('computer-image').src = `https://pngimg.com/d/computer_pc_PNG102107.png${computerLevel}.png`;
-
-            document.getElementById('second-computer-image').src = `https://pngimg.com/d/computer_pc_PNG102107.png${computerLevel}.png`;
-            // Increase computer upgrade cost
-            computerUpgradeCost = Math.pow(2, computerLevel) * 50;
-
-            updateMoneyDisplay();
-            updateComputerUpgradeCost();
+        // Upgrade computer and change image
+        currentImageIndex++;
+        if (currentImageIndex < computerImages.length) {
+            document.getElementById('computer-image').src = computerImages[currentImageIndex];
         } else {
-            alert('Not enough money to upgrade the computer!');
+           
+            alert('You have reached the maximum computer upgrade.');
+            return;
         }
-    }
 
-    function updateComputerUpgradeCost() {
-        document.getElementById('computer-upgrade-cost').textContent = `Next Computer Upgrade Cost: $${computerUpgradeCost}`;
+        // Increase computer upgrade cost
+        computerUpgradeCost = Math.pow(2, currentImageIndex + 1) * 50;
+
+        updateMoneyDisplay();
+        updateComputerUpgradeCost();
+    } else {
+        alert('Not enough money to upgrade the computer!');
     }
+}
+
+function updateComputerUpgradeCost() {
+    document.getElementById('computer-upgrade-cost').textContent = `Next Computer Upgrade Cost: $${computerUpgradeCost}`;
+}
 </script>
 
     </script>
