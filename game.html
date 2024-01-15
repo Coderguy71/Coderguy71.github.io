@@ -97,7 +97,7 @@
 
 .binary-code-container {
     display: flex;
-    flex-direction: column-reverse; /* Reverse the order to start from the bottom */
+    flex-direction: column; /* Start from the top */
     height: 100vh;
     animation: binaryFlow 10s linear infinite;
 }
@@ -111,11 +111,11 @@
 }
 
 @keyframes binaryFlow {
-    from {
-        transform: translateY(100%);
-    }
-    to {
+    0% {
         transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
     }
 }
     </style>
