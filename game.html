@@ -7,74 +7,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberEmpire - Money Simulator</title>
     <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+       body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
-        h1 {
-            font-size: 36px;
-            margin-top: 50px;
-        }
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    gap: 20px;
+}
 
-        p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+.upgrade-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: 2px solid #45a049;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    margin: 5px; /* Add margin for spacing */
+}
 
-        #game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 70vh;
-            gap: 20px;
-        }
+.upgrade-button:hover {
+    background-color: #45a049;
+    color: #000;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
 
-        #money-display {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+#money-display {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
-        .upgrade-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: 2px solid #45a049;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
-        }
+#next-button-cost,
+#computer-upgrade-cost {
+    font-size: 16px;
+    margin-top: 10px;
+}
 
-        .upgrade-button:hover {
-            background-color: #45a049;
-            color: #000;
-            border-color: #4CAF50;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
+#computer-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        #next-button-cost {
-            font-size: 16px;
-            margin-top: 10px;
-        }
+#computer-image {
+    width: 100px;
+    height: auto;
+}
 
-        #computer-container {
-            margin-top: 20px;
-        }
-
-        #computer-image {
-            width: 100px;
-            height: auto;
-        }
-
-        #computer-upgrade-cost {
-            font-size: 16px;
-            margin-top: 10px;
-        }
        /* Binary code animation */
 #binary-banner-left,
 #binary-banner-right {
