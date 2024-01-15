@@ -118,14 +118,19 @@
         <p>Generate money and upgrade your money generator!</p>
     </header>
 
-    <div id="game-container">
+   <div id="game-container">
         <div id="money-display">$0</div>
         <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
         <div id="next-button-cost">Next Upgrade Cost: $10</div>
+
+        <!-- Move Ask Random Question button here -->
         <button class="upgrade-button" onclick="askRandomQuestion()" id="ask-question-button">Ask Random Question</button>
+
+        <!-- Move Question container, Answer input, and Submit Answer button here -->
         <div id="question-container"></div>
         <input type="text" id="answer-input">
         <button onclick="checkAnswer()" id="submit-answer-button">Submit Answer</button>
+
         <button class="upgrade-button" onclick="earnMoney()">Earn $1</button>
 
 
