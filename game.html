@@ -98,8 +98,8 @@
 .binary-code-container {
     display: flex;
     flex-direction: column-reverse; /* Reverse the order to start from the bottom */
-    height: 200vh; /* Set a larger height to ensure continuous flow */
-    animation: binaryFlow 20s linear infinite; /* Adjust duration to match the extended height */
+    height: 100vh;
+    animation: binaryFlow 10s linear infinite;
 }
 
 .binary-code {
@@ -107,6 +107,16 @@
     font-size: 12px;
     line-height: 20px;
     color: #00ff00; /* Green color for binary code */
+    white-space: nowrap;
+}
+
+@keyframes binaryFlow {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
 }
     </style>
 </head>
