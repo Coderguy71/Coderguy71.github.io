@@ -75,7 +75,7 @@
             font-size: 16px;
             margin-top: 10px;
         }
-        /* Binary code animation */
+       /* Binary code animation */
 #binary-banner-left,
 #binary-banner-right {
     position: fixed;
@@ -98,7 +98,8 @@
 .binary-code-container {
     display: flex;
     flex-direction: column-reverse; /* Reverse the order to start from the bottom */
-    animation: binaryFlow 10s linear infinite;
+    height: 200vh; /* Set a larger height to ensure continuous flow */
+    animation: binaryFlow 20s linear infinite; /* Adjust duration to match the extended height */
 }
 
 .binary-code {
