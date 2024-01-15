@@ -84,6 +84,7 @@
     width: 50px;
     background: #000;
     z-index: 999;
+    overflow: hidden; /* Hide overflow to create a seamless loop */
 }
 
 #binary-banner-left {
@@ -94,27 +95,17 @@
     right: 0;
 }
 
+.binary-code-container {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse the order to start from the bottom */
+    animation: binaryFlow 10s linear infinite;
+}
+
 .binary-code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12px;
     line-height: 20px;
     color: #00ff00; /* Green color for binary code */
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-/* Add animation to binary code */
-@keyframes binaryFlow {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(calc(100vh - 20px));
-    }
-}
-
-.binary-code-container {
-    animation: binaryFlow 10s linear infinite;
 }
     </style>
 </head>
