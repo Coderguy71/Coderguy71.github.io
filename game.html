@@ -75,6 +75,47 @@
             font-size: 16px;
             margin-top: 10px;
         }
+        /* Binary code animation */
+#binary-banner-left,
+#binary-banner-right {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 50px;
+    background: #000;
+    z-index: 999;
+}
+
+#binary-banner-left {
+    left: 0;
+}
+
+#binary-banner-right {
+    right: 0;
+}
+
+.binary-code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    line-height: 20px;
+    color: #00ff00; /* Green color for binary code */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Add animation to binary code */
+@keyframes binaryFlow {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(100vh - 20px));
+    }
+}
+
+.binary-code-container {
+    animation: binaryFlow 10s linear infinite;
+}
     </style>
 </head>
 
@@ -101,6 +142,14 @@
     <div id="computer-upgrade-cost">Next Computer Upgrade Cost: $50</div>
     <button class="upgrade-button" onclick="upgradeComputer()">Upgrade Computer</button>
     </div>
+           <div id="binary-banner-left" class="binary-code-container">
+        <div class="binary-code">0101010101010101010101010101010101010101010101010101010101010101</div>
+    </div>
+
+    <div id="binary-banner-right" class="binary-code-container">
+        <div class="binary-code">0101010101010101010101010101010101010101010101010101010101010101</div>
+    </div>
+
     </div>
 
     <script>
