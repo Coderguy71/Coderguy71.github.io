@@ -81,28 +81,31 @@
     overflow: hidden; 
 }
 
-#binary-banner-left {
-    left: 0;
-}
-
+#binary-banner-left,
 #binary-banner-right {
-    right: 0;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 50px;
+    background: none;
+    z-index: 999;
+    overflow: hidden; 
 }
 
 .binary-code-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    animation: binaryFlow 10s linear infinite;
 }
 
-.binary-code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
-    line-height: 20px;
-    color: #00ff00; 
-    white-space: nowrap;
+#binary-banner-left .binary-code-container {
+    animation: binaryFlowLeft 10s linear infinite;
 }
+
+#binary-banner-right .binary-code-container {
+    animation: binaryFlowRight 10s linear infinite;
+}
+
 
 @keyframes binaryFlowLeft {
     0% {
@@ -129,6 +132,7 @@
 #binary-banner-right .binary-code-container {
     animation: binaryFlowRight 10s linear infinite;
 }
+
 
 
         #help-button {
