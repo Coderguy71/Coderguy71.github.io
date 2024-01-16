@@ -56,7 +56,7 @@
 }
 
 #computer-container {
-    margin-top: -350px;
+    margin-top: -450px;
     margin-left: -600px; 
     display: flex;
     flex-direction: column;
@@ -105,29 +105,42 @@
 }
 
 @keyframes binaryFlowLeft {
-    0%, 50% {
-        transform: translateY(-100%);
+    0% {
+        transform: translateY(100%);
     }
     100% {
-        transform: translateY(100%);
+        transform: translateY(-100%);
     }
 }
 
 @keyframes binaryFlowRight {
-    0%, 50% {
-        transform: translateY(100%);
+    0% {
+        transform: translateY(-100%);
     }
     100% {
-        transform: translateY(-100%);
+        transform: translateY(100%);
     }
 }
 
 #binary-banner-left .binary-code-container {
-    animation: binaryFlowLeft 1s linear infinite;
+    animation: binaryFlowLeft 10s linear infinite;
 }
 
 #binary-banner-right .binary-code-container {
-    animation: binaryFlowRight 1s linear infinite;
+    animation: binaryFlowRight 10s linear infinite;
+}
+
+.binary-code {
+    animation: binaryBlink 0.5s infinite alternate;
+}
+
+@keyframes binaryBlink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
 
