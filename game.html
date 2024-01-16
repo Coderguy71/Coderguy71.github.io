@@ -137,10 +137,19 @@
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: #000;
-    border: 2px solid #007bff; /* Adjust color as needed */
+    border: 2px solid #007bff;
     z-index: 1000;
     display: none;
 }
+
+        #bottom-left-image {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 150px;
+        height: auto;
+    }
+        
     </style>
 </head>
 
@@ -149,7 +158,7 @@
         <h1>CyberEmpire Money Simulator</h1>
         <p>Generate money and upgrade your money generator!</p>
     </header>
-
+    <img id="bottom-left-image" src="https://i.ibb.co/KmppMHw/Untitled-design-1.png" alt="Bottom Left Image">
    <div id="game-container">
         <div id="money-display">$0</div>
         <button class="upgrade-button" onclick="upgradeGenerator()">Upgrade Money Generator</button>
