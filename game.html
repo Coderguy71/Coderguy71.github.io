@@ -71,26 +71,38 @@
 
        
 .binary-banners {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        overflow: hidden;
-    }
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
 
-    .binary-banners.left {
-        left: 0;
-    }
+.binary-banners.left {
+    left: 0;
+}
 
-    .binary-banners.right {
-        right: 0;
-    }
+.binary-banners.right {
+    right: 0;
+}
 
-    .binary-banners .binary-code-container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh; /* Change to 100vh to cover the entire height */
-        animation: binaryFlow 10s linear infinite;
+.binary-banners .binary-code-container {
+    display: flex;
+    flex-direction: column-reverse; /* Change to column-reverse to make it flow down */
+    height: 100vh;
+    animation: binaryFlow 10s linear infinite;
+}
+
+.binary-code {
+    font-size: 10px; /* Adjust font size as needed */
+}
+        @keyframes binaryFlow {
+    0% {
+        transform: translateY(0%);
     }
+    100% {
+        transform: translateY(-100%);
+    }
+}
 
 
         #help-button {
