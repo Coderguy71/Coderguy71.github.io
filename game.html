@@ -104,23 +104,32 @@
     white-space: nowrap;
 }
 
-@keyframes binaryFlow {
-     0% {
+@keyframes binaryFlowLeft {
+    0%, 50% {
         transform: translateY(-100%);
     }
-    25% {
+    100% {
         transform: translateY(100%);
     }
-    50% {
+}
+
+@keyframes binaryFlowRight {
+    0%, 50% {
         transform: translateY(100%);
-    }
-    75% {
-        transform: translateY(-100%);
     }
     100% {
         transform: translateY(-100%);
     }
 }
+
+#binary-banner-left .binary-code-container {
+    animation: binaryFlowLeft 10s linear infinite;
+}
+
+#binary-banner-right .binary-code-container {
+    animation: binaryFlowRight 10s linear infinite;
+}
+
         #help-button {
     position: absolute;
     top: 10px;
