@@ -71,40 +71,26 @@
 
        
 .binary-banners {
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    overflow: hidden;
-}
-
-.binary-banners.right {
-    left: auto;
-    right: 0;
-}
-
-.binary-banners .binary-code-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    animation: binaryFlow 10s linear infinite;
-}
-
-@keyframes binaryFlow {
-    0% {
-        transform: translateY(0);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
     }
-    100% {
-        transform: translateY(100%);
+
+    .binary-banners.left {
+        left: 0;
     }
-}
 
-.binary-banners .binary-code {
-    margin: 0;
-}
+    .binary-banners.right {
+        right: 0;
+    }
 
-.binary-banners.right .binary-code {
-    margin-right: 5px;
-}
+    .binary-banners .binary-code-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Change to 100vh to cover the entire height */
+        animation: binaryFlow 10s linear infinite;
+    }
 
 
         #help-button {
@@ -175,8 +161,8 @@
     <div id="computer-upgrade-cost">Next Computer Upgrade Cost: $50</div>
     <button class="upgrade-button" onclick="upgradeComputer()">Upgrade Computer</button>
     </div>
-         <div class="binary-banners">
-        <div class="binary-code-container">
+        <div class="binary-banners left">
+    <div class="binary-code-container">
     <div class="binary-code">0110</div>
     <div class="binary-code">01010</div>
     <div class="binary-code">01010</div>
@@ -293,8 +279,8 @@
               
 </div>
 
-  <div class="binary-banners right">
-        <div class="binary-code-container">
+ <div class="binary-banners right">
+    <div class="binary-code-container">
      <div class="binary-code">0110</div>
     <div class="binary-code">01010</div>
     <div class="binary-code">01010</div>
