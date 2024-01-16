@@ -70,54 +70,41 @@
 }
 
        
- .binary-banners {
-            position: fixed;
-            top: 0;
-            z-index: 999;
-            overflow: hidden;
-        }
+.binary-banners {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    overflow: hidden;
+}
 
-        .binary-code-container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            animation: binaryFlow 10s linear infinite;
-        }
+.binary-banners.right {
+    left: auto;
+    right: 0;
+}
 
-        @keyframes binaryFlow {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(100%);
-            }
-        }
+.binary-banners .binary-code-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: binaryFlow 10s linear infinite;
+}
 
-        .binary-banners.right {
-            left: auto;
-            right: 0;
-        }
+@keyframes binaryFlow {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
 
-        .binary-banners.right .binary-code-container {
-            animation: binaryFlowReverse 10s linear infinite;
-        }
+.binary-banners .binary-code {
+    margin: 0;
+}
 
-        @keyframes binaryFlowReverse {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        .binary-banners .binary-code {
-            margin: 0;
-        }
-
-        .binary-banners.right .binary-code {
-            margin-right: 5px;
-        }
+.binary-banners.right .binary-code {
+    margin-right: 5px;
+}
 
 
         #help-button {
