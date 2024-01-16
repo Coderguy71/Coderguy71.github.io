@@ -87,8 +87,8 @@
 
 .binary-banners .binary-code-container {
     display: flex;
-    flex-direction: column-reverse; /* Change to column-reverse to make it flow down */
-    height: 100vh;
+    flex-direction: column;
+    height: 200vh;
     animation: binaryFlow 10s linear infinite;
 }
 
@@ -97,10 +97,10 @@
 }
         @keyframes binaryFlow {
     0% {
-        transform: translateY(0%);
+        transform: translateY(100%);
     }
     100% {
-        transform: translateY(-100%);
+        transform: translateY(0%);
     }
 }
 
